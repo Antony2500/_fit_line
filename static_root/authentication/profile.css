@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для контейнера профиля */
+.profile-container {
+    background-color: #0dece5;
+    color: white;
+    padding: 20px;
+}
+
+/* Стили для меню */
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Стили для формы */
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white; /* Добавляем белый фон для формы */
+    color: #333; /* Изменяем цвет текста на черный для лучшей видимости */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Отступ между полями формы */
+}
+
+.form-control {
+    margin-bottom: 10px; /* Отступ между элементами .form-control */
+}
+
+/* Стили для кнопок внутри .form-container */
+.form-container .btn-submit,
+.form-container .btn-submit:hover {
+    background-color: #0dece5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-container .btn-submit:hover {
+    background-color: #06c3d6;
+}
+
+.error-text {
+    color: red;
+    font-size: 14px;
+}
+
+/* Стили для кнопки Submit */
+.btn-submit {
+    background-color: white;
+    color: #0dece5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #06c3d6;
+    color: white;
+}
+/* Адаптивные стили */
+@media screen and (max-width: 1919px) {
+    /* Стили для разрешений от 1280 до 1919 px */
+    .profile-container {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    /* Стили для разрешений от 768 до 1279 px */
+    .profile-container {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Стили для разрешений от 320 до 767 px */
+    .profile-container {
+        padding: 5px;
+    }
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+    .form-group {
+        margin: 10px 0;
+    }
+}

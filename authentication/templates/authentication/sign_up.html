@@ -1,0 +1,45 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Sign up
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authentication/sign_up.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="sign-up">
+        <h2>Welcome to Fit Line!</h2>
+        <p>Get fit and healthy with our premium sports nutrition products.</p>
+        <form method="post" action="{% url 'signup' %}">
+          {% csrf_token %}
+
+          <!-- Display any errors if present (Виводить будь-які помилки, якщо вони є) -->
+          {% for field in form %}
+            {% if field.errors %}
+              {% for error in field.errors %}
+                <p class="error-message" style="color: red; font-size: 14px; text-align: center; margin-bottom: 10px; padding: 5px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 5px;">{{ error }}</p>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+
+          <label for="id_username">Username:</label>
+          <input type="text" id="id_username" name="username" placeholder="Enter your username" required>
+
+          <label for="id_email">Email:</label>
+          <input type="email" id="id_email" class="form-input" name="email" placeholder="Enter your email" required>
+
+          <label for="id_password1">Password:</label>
+          <input type="password" id="id_password1" name="password1" placeholder="Enter your password" required autocomplete="off">
+
+          <label for="id_password2">Confirm Password:</label>
+          <input type="password" id="id_password2" name="password2" placeholder="Confirm your password" required autocomplete="off">
+
+          <input type="submit" value="Register">
+          <a href="{% url 'login' %}" class="register-link">Already registered? Log in</a>
+
+        </form>
+    </div>
+{% endblock %}

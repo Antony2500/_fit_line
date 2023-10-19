@@ -1,0 +1,69 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Стили для карточек */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    max-width: 350px; /* Ограничиваем максимальную ширину карточки */
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопки Edit */
+.btn {
+    background-color: #0dece5;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block; /* Добавляем кнопке блочный стиль */
+    margin-top: 10px; /* Отступ сверху кнопки */
+}
+
+.btn:hover {
+    background-color: #06c3d6;
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 1919px) {
+    .card {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .card {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        padding: 5px;
+    }
+    .btn {
+        margin-top: 5px; /* Уменьшаем отступ сверху кнопки на мобильных устройствах */
+    }
+}

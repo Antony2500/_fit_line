@@ -1,0 +1,51 @@
+/* style.css */
+body {
+    background-color: #0dece5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-update {
+    background-color: #0dece5;
+    color: white;
+}
+
+.btn-update,
+.btn-back {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-update {
+    background-color: #0dece5;
+    color: white;
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-update:hover,
+.btn-back:hover {
+    background-color: #00c4cf;
+}

@@ -1,0 +1,170 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Fit Line
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'web-site_fit_line2/for_animation.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div id="main_information">
+      <h4>Trade in offer</h4>
+      <h2>Супервигідні пропозиції</h2>
+      <h1>На весь асортимент</h1>
+      <p>Швидка доставка по всій Україні та 100% гарантія якості!</p>
+      <button>Shop Now</button>
+    </div>
+
+    <div class="animation2">
+      <svg viewbox="0 0 100 20">
+        <defs>
+          <linearGradient id="gradient">
+          <stop color="#000"/>
+          </linearGradient>
+          <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+          <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+            <animateTransform
+              attributeName="transform"
+              begin="0s"
+              dur="1.5s"
+              type="translate"
+              from="0,0"
+              to="40,0"
+              repeatCount="indefinite" />
+          </path>
+          </pattern>
+        </defs>
+        <text text-anchor="middle" x="50" y="55" font-size="17" fill="white" fill-opacity="0.1">UPGRADE</text>
+        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="1">UPGRADE</text>
+        </svg>
+
+    </div>
+
+    <div id="main_information2" class="section_p1">
+      <h4>Fit Line Daily Deal</h4>
+      <h2>Щоденні спеціальні пропозиції</h2>
+      <h1>Заощаджуйте на своїх улюблених продуктах для спортивного харчування</h1>
+      <p id="main_information2_p">Підсиліть свої м'язи з нашим спортивним харчуванням та досягніте максимальних результатів.</p>
+    </div>
+
+    <div class="showcase" id="showcase_product">
+      <h2>Обширний вибір товару</h2>
+      <p>Новий сучасний одяг для спорту</p>
+      <div class="pro-container-wrapper">
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Легінси та штани" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/legins.jpg' %}" alt="">
+                <div class="des">
+                  <span>Легінси</span>
+                  <h5>Легінси-утяжка з еластичним корсетом Y2-P70</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+       <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Шорти та Велосипедки" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/shorts.jpg' %}" alt="">
+                <div class="des">
+                  <span>Велосипедки</span>
+                  <h5>Легінси-утяжка з еластичним корсетом Y2-P70</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Верхній одяг" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/top.jpg' %}" alt="">
+                <div class="des">
+                  <span>Топи</span>
+                  <h5>Топ COMFORT T2-C39</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Легінси та штани" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/termo_legins.jpg' %}" alt="">
+                <div class="des">
+                  <span>Жіночі термолосини</span>
+                  <h5>Жіночі термолосини ICELAND TWS1-V9</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner">
+        <img src="{% static 'main_pages/images/banner.png' %}" alt="">
+    </div>
+
+    <div class="showcase" id="showcase_product2">
+      <h2>Спортивне харчування на любий смак</h2>
+      <p>Спортивне харчування для всіх типів тренувань</p>
+      <div class="pro-container-wrapper">
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Замінник харчування" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/showcase_1.jpeg' %}" alt="">
+                <div class="des">
+                  <span>Замінник харчування</span>
+                  <h5>BioTech Diet Shake, 720 грамм Шоколад</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+       <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Креатин" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/showcase_2.jpeg' %}" alt="">
+                <div class="des">
+                  <span>Креатин</span>
+                  <h5>100% Creatine Monohydrate - 300 г</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Жироспалювачі" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/showcase_3.JPG' %}" alt="">
+                <div class="des">
+                  <span>Жироспалювачі</span>
+                  <h5>OstroVit Appetite Control 60 капсул </h5>
+                </div>
+            </a>
+          </div>
+        </div>
+        <div class="pro-container">
+          <div class="pro">
+            <a href="{% url 'shop' %}?category=Вітаміни та мінерали" style="text-decoration: none;">
+                <img src="{% static 'main_pages/images/showcase_4.jpeg' %}" alt="">
+                <div class="des">
+                  <span>Вітаміни та мінерали</span>
+                  <h5>BioTech Immune + Biotiq, 36 капсул</h5>
+                </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <div class="newstext">
+        <h4>Підпишіться на розсилку новин</h4>
+        <p>Отримуйте новини про наш новий магазин та <span>спеціальні пропозиції</span></p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Додайте вашу електронну пошту">
+          <a href="{% url 'signup' %}"><button>Sign up</button></a>
+      </div>
+    </div>
+{% endblock %}

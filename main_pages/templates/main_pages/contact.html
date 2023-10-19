@@ -1,0 +1,137 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Contact
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_pages/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contact">
+            <div class="details">
+                <span>Наша локація</span>
+                <h2>Як можна нас знайти ?</h2>
+                <h3>Магазин</h3>
+                <div>
+                    <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>вулиця Космонавта Беляєва, 4, Мукачево, Закарпатська область, 89600</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <p>m.fitnessline@gmail.com</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>+380 (96) 665 60 98</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <p>10.00 - 18.00</p>
+                    </li>
+                </div>
+            </div>
+            <div class="map">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d330.8368698789243!2d22.717284393900826!3d48.
+                 443194043575886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4739ab86cbe64145%3A0x952d62624dd245ab!2sKorzo!
+                 5e0!3m2!1sru!2sua!4v1683131286531!5m2!1sru!2sua" width="600" height="450" style="border:0;"
+                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+            </div>
+        </div>
+
+        <div class="responsive-container-block bigContainer">
+			<div class="responsive-container-block Container">
+			  <div class="imgContainer">
+				<img class="mainImg" src="{% static 'main_pages/images/contact.jpg' %}">
+			  </div>
+			  <div class="responsive-container-block textSide">
+				<p class="text-blk heading">
+				  Contact Us
+				</p>
+				<p class="text-blk subHeading">
+					Зв'яжіться з нами за допомогою зручного для вас способу. Ми завжди готові відповісти на ваші запитання та надати необхідну інформацію. Ваша думка дуже важлива для нас і ми завжди вас чекаємо.
+				</p>
+				<a href="https://instagram.com/m.fitnessline?igshid=MzRlODBiNWFlZA==">
+					<div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+					  <div class="cardImgContainer">
+						<img class="cardImg" src="{% static 'main_pages/images/logo_instagram.PNG' %}">
+					  </div>
+					  <div class="cardText">
+						<p class="text-blk cardHeading">
+						  Instagram
+						</p>
+						<p class="text-blk cardSubHeading">
+						  <a>@m.fitnessline</a>
+						</p>
+					  </div>
+					</div>
+				</a>
+				<a href="https://www.facebook.com/fitline.m">
+					<div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+					  <div class="cardImgContainer">
+						<img class="cardImg" src="{% static 'main_pages/images/logo_facebook.PNG' %}">
+					  </div>
+					  <div class="cardText">
+						<p class="text-blk cardHeading">
+						  Facebook
+						</p>
+						<p class="text-blk cardSubHeading">
+						  FitLine
+						</p>
+					  </div>
+					</div>
+				</a>
+				<a href="https://t.me/fitline_m">
+					<div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+					  <div class="cardImgContainer">
+						<img class="cardImg" src="{% static 'main_pages/images/logo_telegram.PNG' %}">
+					  </div>
+					  <div class="cardText">
+						<p class="text-blk cardHeading">
+						  Telegram
+						</p>
+						<p class="text-blk cardSubHeading">
+						  @fitline_m
+						</p>
+					  </div>
+					</div>
+				</a>
+				<div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+				  <div class="cardImgContainer">
+					<img class="cardImg" src="{% static 'main_pages/images/logo_viber.PNG' %}">
+				  </div>
+				  <div class="cardText">
+					<p class="text-blk cardHeading">
+					  Viber
+					</p>
+					<p class="text-blk cardSubHeading">
+					  +380 (96) 665 60 98
+					</p>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+				  <div class="cardImgContainer">
+					<img class="cardImg" src="{% static 'main_pages/images/whatsapp.png' %}">
+				  </div>
+				  <div class="cardText">
+					<p class="text-blk cardHeading">
+					  Whatsapp
+					</p>
+					<p class="text-blk cardSubHeading">
+					  +380 (96) 665 60 98
+					</p>
+				  </div>
+				</div>
+
+<!--				<a>-->
+<!--				  <button class="explore">-->
+<!--					Explore our Services-->
+<!--				  </button>-->
+<!--				</a>-->
+			  </div>
+			</div>
+		</div>
+{% endblock %}

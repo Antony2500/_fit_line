@@ -1,0 +1,60 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Product detail
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/product_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="container">
+
+  <!-- Left Column / Headphones Image -->
+<!--  <div class="left-column">-->
+<!--    <img src="{{product.product_image.url}}" alt="">-->
+<!--  </div>-->
+
+  <img src="{{product.product_image.url}}" alt="">
+  <!-- Right Column -->
+  <div class="right-column">
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <h1>{{product}}</h1>
+      <p>{{product.description}}</p>
+    </div>
+
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+
+      <!-- Product Color -->
+      <div class="product-description">
+        <span>Склад</span>
+        <p>{{product.composition}}</p>
+      </div>
+
+      <!-- Cable Configuration -->
+      <div class="cable-config">
+        <span>Дозування</span>
+
+        <div class="product-description">
+           <p>{{product.prodapp}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{product.selling_price}}₴</span>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="cart-btn">Купити</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

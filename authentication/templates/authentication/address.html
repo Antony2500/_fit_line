@@ -1,0 +1,48 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Address
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authentication/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'authentication/address.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <div class="form-group">
+            <a href="{% url 'profile' %}"><button type="submit" class="btn-submit">Profile</button></a>
+            <a href="{% url 'address' %}"><button type="button" class="btn-submit ">Address</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for ad in addresses %}
+                    <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Адрес #{{ forloop.counter }}</h3>
+                                <p>ПІБ: {{ad.name}}</p>
+                                <p>Місто: {{ad.city}}</p>
+                                <p>Вулиця: {{ad.locality}}</p>
+                                <p>Номер Відділення (НП): {{ ad.branch_number }}</p>
+                                <p>Телефон: {{ad.mobile}}</p>
+                                <p>Область: {{ad.state}}</p>
+                                <p>Індекс: {{ad.zipcode}}</p>
+                                <p>Коментар: {{ad.comment}}</p>
+                                <form action="{% url 'update_address' ad.id %}" method="post">
+                                    {% csrf_token %}
+                                     <input type="submit" value="Update" class="btn btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

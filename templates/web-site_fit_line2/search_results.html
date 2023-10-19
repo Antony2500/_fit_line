@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    {% load static %}
+    <link rel = "stylesheet" href="{% static 'shop/shop.css' %}">
+  </head>
+  <body>
+     {% for product in products  %}
+
+        <div class="productContainer">
+            <div class="thumbnail">
+                <a href="{% url 'product_detail' product.id %}"><img src="{{product.product_image.url}}" alt=""></a>
+            </div>
+            <div class="action">
+                <p>{{product.name}}</p>
+                <p>{{product.selling_price}}₴</p>
+            </div>
+        </div>
+    {% endfor %}
+  </body>
+</html>
+

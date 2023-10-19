@@ -1,0 +1,40 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  About
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_pages/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container bottomContainer">
+            <div class="ultimateImg">
+                <img class="mainImg"  src="{% static 'main_pages/images/about_us.jpg' %}">
+                <div class="purpleBox">
+                    <p class="purpleText">
+                    Ми також пропонуємо стильний та комфортний жіночий спортивний одяг, що дозволяє вам виглядати і відчувати себе на висоті під час тренувань.
+                    </p>
+                </div>
+            </div>
+            <div class="allText bottomText">
+                <p class="text-blk headingText">
+                  About Us
+                </p>
+                <p class="text-blk subHeadingText">
+                    Ласкаво просимо до Fit Line - магазину, де ви можете знайти все необхідне для підтримки здорового способу життя!
+                </p>
+                <p class="text-blk description">
+                    У нашому магазині ми пропонуємо широкий асортимент спортивного харчування та вітамінів, які допоможуть вам підтримувати оптимальну форму та енергію для досягнення ваших фітнес-цілей.
+                </p>
+                <a href="{% url 'shop' %}" class="explore">
+                  Shop now
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

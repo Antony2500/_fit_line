@@ -1,0 +1,60 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Category
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/category.css' %}">
+{% endblock %}
+
+{% block content %}
+<!--    <h1>Category : {{product}}</h1>-->
+<!--    <div class="container_wrapper">-->
+<!--        <div class="container">-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+<div class="container">
+  <div class="content">
+    <aside class="sidebar">
+      <ul class="sidebar-list">
+        {% for val in title %}
+            <li class="sidebar-item">
+                <a href="{% url 'category_title' val.title %}" style="text-decoration: none; color: #0dece5; display: block; padding: 5px 10px; transition: background-color 0.2s ease;">
+                    {{ val.title }}
+                </a>
+            </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h1>Товары</h1>
+      <div class="product-list">
+        {% for prod in product %}
+        <div class="productContainer">
+          <div class="product-image">
+            <a href="{% url 'product_detail' prod.id %}">
+                <img src="{{prod.product_image.url}}" alt="{{prod.title}}">
+            </a>
+          </div>
+          <h2 class="product-title">{{prod.title}}</h2>
+          {% if prod.selling_price == prod.discounted_price %}
+                <p class="product_price_discounted" style="color: #FF0000; font-weight: 600; ">{{prod.selling_price}}₴</p>
+              {% else %}
+                <p class="product-price">{{prod.selling_price}}₴</p>
+              {% endif %}
+              <button value="{{prod.id}}" class="product-buy">
+                <i class="fa fa-cart-arrow-down cart" aria-hidden="true"></i> Купити
+              </button>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </div>
+</div>
+
+
+{% endblock %}

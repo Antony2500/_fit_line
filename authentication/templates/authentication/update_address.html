@@ -1,0 +1,47 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Update Address
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authentication/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'authentication/update_address.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <div class="form-group">
+            <a href="{% url 'profile' %}"><button type="submit" class="btn-submit">Profile</button></a>
+            <a href="{% url 'address' %}"><button type="button" class="btn-submit ">Address</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for fm in form %}
+                    <div class="form-group">
+                        {{ fm.label_tag }}
+                        {{ fm }}
+                        <small class="text">{{ fm.errors|striptags }}</small>
+                    </div>
+                {% endfor %}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-update">Update</button>
+                    <a href="{% url 'address' %}" class="btn btn-back">Back</a>
+                </div>
+
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="alert">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}

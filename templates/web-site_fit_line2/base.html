@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Fit Line{% endblock %}</title>
+    {% load static %}
+    <link rel = "stylesheet" href="{% static 'web-site_fit_line2/main.css' %}">
+    {% block additional_css %}
+    {% endblock %}
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav id="header">
+      <a href="{% url 'index' %}" class="logo"><img src="{% static 'web-site_fit_line2/images/logo.jpg' %}" alt=""></a>
+
+     <div class="search-dropdown">
+        <form class="form-search" id="search-form">
+          <input type="text" class="form-control" id="search-input" placeholder="Search">
+        </form>
+
+        <div id="search-results" class="search-results">
+
+        </div>
+    </div>
+      <ul class="menu">
+        <li><a href=#>
+          {% if user.is_authenticated %}
+            {{ user.username }}
+          {% else %}
+            log In/Register
+          {% endif %}
+        </a>
+          <ul class="submenu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="{% url 'login' %}">Log in</a></li>
+            <li><a href="{% url 'signup' %}">Sign up</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div>
+      <div>
+        <ul id="navbar">
+           <li><a class="{% if active_page == 'home' %}active{% endif %}" href="/">Home</a></li>
+           <li><a class="{% if active_page == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a></li>
+           <li><a class="{% if active_page == 'shop' %}active{% endif %}" href="{% url 'shop' %}">Shop</a></li>
+           <li><a class="{% if active_page == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
+           <li id="lg-bag"><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+           <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+        <!-- <strong id="mobile-menu-btn">Menu</strong> -->
+      </div>
+      <div id="mobile">
+        <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </nav>
+
+{% block content  %}
+{% endblock %}
+
+    <footer>
+      <div class="footer">
+      <div class="row">
+      <a href="https://www.facebook.com/fitline.m"><i class="fa fa-facebook"></i></a>
+      <a href="https://instagram.com/m.fitnessline?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a>
+      <a href=""><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="row">
+      <ul>
+      <li><a href="{% url 'contact' %}">Contact us</a></li>
+      <li><a href="{% url 'contact' %}">Our Services</a></li>
+      <li><a href="{% url 'about' %}">Privacy Policy</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="{% url 'about' %}">About us</a></li>
+      </ul>
+      </div>
+
+      <div class="row">
+      Завжди є місце для поліпшення. Fit Line допоможе тобі стати кращою версією самого себе!
+      </div>
+      </div>
+      </footer>
+
+    {% block additional_js %}
+    {% endblock %}
+    <script src="{% static 'web-site_fit_line2/js/main_script.js' %}"></script>
+  </body>
+</html>

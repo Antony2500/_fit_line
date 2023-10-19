@@ -1,0 +1,66 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+     Cart
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'order/order.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="order-page">
+    <div class="order-form">
+        <h2>Деталі замовлення</h2>
+        <form action="" method="post">
+                {% csrf_token %}
+                {{ customer_profile_form.as_p }}
+                <h2>Спосіб оплати</h2>
+                {{ delivery_method_form.as_p }}
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Надіслати</button>
+                </div>
+                {% if form.non_field_errors %}
+                    <div class="non-field-errors">
+                        {% for error in form.non_field_errors %}
+                            <p class="error-text">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if messages %}
+                    <div class="messages">
+                        {% for msg in messages %}
+                            <div class="alert alert-{{ msg.tags }}" role="alert">
+                                {{ msg }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+         </form>
+    </div>
+    <div>
+        <div class="order-summary">
+            <h2>ТОВАРИ В ЗАКАЗІ</h2>
+            <p>Всього: {{ order.order_total_price }}₴</p>
+         </div>
+
+        <div class="product-list">
+            {% for order_item in order.order_items.all %}
+            <div class="product">
+                <img src="{{ order_item.product.product_image.url }}" alt="{{ order_item.product.name }}">
+                <h3>{{ order_item.product.name }}</h3>
+                <p>Quantity: {{ order_item.quantity }}</p>
+                <p>Price: {{ order_item.product.selling_price }}₴</p>
+                <p>Total: {{ order_item.price }}₴</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{% static 'order/js/order.js' %}"></script>
+{% endblock %}

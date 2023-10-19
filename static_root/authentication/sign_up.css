@@ -1,0 +1,74 @@
+body {
+    background-color: #0dece5;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* sign_up.css */
+#sign-up {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sign-up h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #0dece5;
+}
+
+#sign-up p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #0dece5;
+    text-align: center;
+}
+
+#sign-up form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #0dece5;
+}
+
+#sign-up form input[type="text"],
+#sign-up form input[type="email"],
+#sign-up form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #0dece5;
+}
+
+#sign-up form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0dece5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sign-up form input[type="submit"]:hover {
+    background-color: #0bceff;
+}
+
+.register-link {
+    display: block;
+    color: #0dece5;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

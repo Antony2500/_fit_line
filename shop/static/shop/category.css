@@ -1,0 +1,134 @@
+/* Общие стили */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 5px;
+  background-color: white;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item:hover {
+  background-color: black;
+}
+
+.main-content {
+  flex: 3;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.productContainer {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-title {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #333;
+}
+
+.product_price_discounted {
+  font-size: 14px;
+  color: #ff0000; /* Красный цвет */
+}
+
+.discounted {
+  color: #ff0000; /* Красный цвет */
+}
+
+.product-buy {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #0dece5;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.product-buy:hover {
+  background-color: #08c0ca;
+}
+
+/* Медиа-запросы для разрешений экрана */
+@media (max-width: 1919px) {
+  /* Стили для разрешения 1280px - 1919px */
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 1279px) {
+  /* Стили для разрешения 768px - 1279px */
+  .content {
+    flex-direction: column;
+  }
+  .sidebar {
+    padding: 10px;
+  }
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  /* Стили для разрешения 320px - 767px */
+  .main-content {
+    padding: 10px;
+  }
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .productContainer {
+    padding: 10px;
+  }
+  .product-title {
+    font-size: 14px;
+  }
+  .product-price {
+    font-size: 12px;
+  }
+}

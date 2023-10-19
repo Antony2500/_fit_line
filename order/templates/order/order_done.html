@@ -1,0 +1,21 @@
+{% extends "web-site_fit_line2/base.html" %}
+
+{% block title %}
+  Successfully Completed
+{% endblock title %}
+
+{% block additional_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'order/order_done.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="success alert">
+            <div class="alert-body">
+                 Усішно виконано !
+            </div>
+         </div>
+    </div>
+
+{% endblock %}
