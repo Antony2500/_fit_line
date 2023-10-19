@@ -1,0 +1,16 @@
+.env
+
+/venv
+
+*.jpg
+*.png
+*.jpeg
+
+.idea/
+.vscode/
+
+media/
+
+*.pyc
+*.pyo
+__pycache__/
